@@ -11,7 +11,6 @@ COPY . .
 RUN apt-get update && apt-get upgrade -y && apt-get install -y wget unzip python3 python3-pip p7zip
 
 RUN wget --no-check-certificate "http://abrok.eu/stockfish/latest/linux/stockfish_x64_modern.zip" -O chess-engine.zip
-RUN wget --no-check-certificate "https://data.stockfishchess.org/nn/nn-938525872610.nnue" -O nn-938525872610.nnue
 RUN 7z e chess-engine.zip && rm chess-engine.zip && mv stockfish* chess-engine
 
 COPY requirements.txt .
